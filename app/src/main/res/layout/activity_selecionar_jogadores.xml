@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    tools:context="com.surycaty.tirartime.SelecionarJogadoresActivity">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/colorControlHighlight">
+
+        <TextView
+            android:id="@+id/lblNumTimes"
+            android:layout_width="wrap_content"
+            android:layout_height="38dp"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/linearLayout"
+            android:layout_marginStart="17dp"
+            android:layout_marginTop="22dp"
+            android:text="Nº de Times"
+            android:textSize="22dp" />
+
+        <Button
+            android:id="@+id/btnUpTimes"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_alignTop="@+id/lblNumTimes"
+            android:layout_toStartOf="@+id/numTimes"
+            android:background="@drawable/plus_32x32"
+            android:elevation="0dp"
+            android:textAlignment="center" />
+
+        <EditText
+            android:id="@+id/numTimes"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:layout_alignTop="@+id/btnUpTimes"
+            android:layout_toStartOf="@+id/btnDownTimes"
+            android:ems="2"
+            android:inputType="numberSigned"
+            android:selectAllOnFocus="false"
+            android:singleLine="false"
+            android:text="5" />
+
+        <Button
+            android:id="@+id/btnDownTimes"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_alignBottom="@+id/btnUpTimes"
+            android:layout_alignParentEnd="true"
+            android:layout_alignTop="@+id/numTimes"
+            android:layout_marginEnd="17dp"
+            android:background="@drawable/minus_32x32" />
+
+        <TextView
+            android:id="@+id/lblNumJogadores"
+            android:layout_width="wrap_content"
+            android:layout_height="38dp"
+            android:layout_alignStart="@+id/lblNumTimes"
+            android:layout_below="@+id/numTimes"
+            android:text="Nº de Jogadores"
+            android:textSize="22sp" />
+
+        <Button
+            android:id="@+id/btnUpJogadores"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_alignBottom="@+id/btnDownJogadores"
+            android:layout_alignStart="@+id/btnUpTimes"
+            android:layout_below="@+id/numTimes"
+            android:background="@drawable/plus_32x32" />
+
+        <EditText
+            android:id="@+id/numJogadores"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:layout_below="@+id/numTimes"
+            android:layout_toEndOf="@+id/btnUpJogadores"
+            android:ems="10"
+            android:inputType="numberSigned"
+            android:selectAllOnFocus="false"
+            android:singleLine="false"
+            android:text="5" />
+
+        <Button
+            android:id="@+id/btnDownJogadores"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_below="@+id/numTimes"
+            android:layout_toEndOf="@+id/numTimes"
+            android:background="@drawable/minus_32x32" />
+
+        <Button
+            android:id="@+id/btnTirarTime"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/numJogadores"
+            android:layout_marginTop="20dp"
+            android:text="Tirar Time" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/btnTirarTime"
+            android:background="@android:color/white">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TableLayout
+                    android:id="@+id/idTableLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/btnTirarTime">
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+                </TableLayout>
+            </LinearLayout>
+        </ScrollView>
+
+
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>
