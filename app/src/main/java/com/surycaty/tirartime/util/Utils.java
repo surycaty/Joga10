@@ -13,9 +13,4 @@ public class Utils {
         return Toast.makeText(context, texto, Toast.LENGTH_LONG);
     }
 
-    public static boolean validarNumeroJogadores(int numJogadores, int numTimes) {
-
-
-        return false;
-    }
 }

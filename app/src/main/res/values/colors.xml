@@ -4,5 +4,6 @@
     <color name="colorPrimaryDark">#006400</color>
     <color name="colorAccent">#084d01</color>
 
+    <color name="cinza_claro">#CCCCCC</color>
     <color name="black_overlay">#66000000</color>
 </resources>

@@ -3,21 +3,21 @@
 
     <item
         is-multidex="true"
-        jar="/home/negus/AndroidStudioProjects/NovoProjeto/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.1"
-        sha1="67111addf3f8e6860219b9c344dcde3d03976b78">
-        <dex dex="/home/negus/AndroidStudioProjects/NovoProjeto/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_c14714a679fd4721359f4607fd9781a9e2dcd8fb/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/negus/AndroidStudioProjects/NovoProjeto/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jar="/home/negus/AndroidStudioProjects/Joga10/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="26.0.1"
         sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
-        <dex dex="/home/negus/AndroidStudioProjects/NovoProjeto/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_14fc6c1d26c3f349097630141627c60ff2598df8/classes.dex" />
+        <dex dex="/home/negus/AndroidStudioProjects/Joga10/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_9745b1b14918af938c6b63c266357a27a9e5e62e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/negus/AndroidStudioProjects/Joga10/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="0c750055144e2d30e3f59d7cd673a89022ba6ee2">
+        <dex dex="/home/negus/AndroidStudioProjects/Joga10/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_5377dc294ba119be54f880a564e6cd9ed1e00905/classes.dex" />
     </item>
 
 </items>
