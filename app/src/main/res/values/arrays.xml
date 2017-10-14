@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="posicoes">
+        <item>GOL</item>
+        <item>ZAG</item>
+        <item>LD</item>
+        <item>LE</item>
+        <item>VOL</item>
+        <item>MD</item>
+        <item>ME</item>
+        <item>SA</item>
+        <item>PD</item>
+        <item>PE</item>
+        <item>ATA</item>
+    </string-array>
+</resources>

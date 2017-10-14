@@ -18,6 +18,7 @@
         </activity>
         <activity android:name=".TimesFormadosActivity" />
         <activity android:name=".SelecionarJogadoresActivity" />
+        <activity android:name=".CadastroJogadorActivity"></activity>
     </application>
 
 </manifest>

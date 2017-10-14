@@ -4,4 +4,5 @@
     <string name="tirar_time">Tirar Time</string>
     <string name="add_jogadores">Adicionar Jogadores</string>
     <string name="title_activity_selecionar_jogadores">SelecionarJogadoresActivity</string>
+
 </resources>
