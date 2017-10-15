@@ -18,6 +18,7 @@ import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.surycaty.tirartime.dao.JogadorDAO;
 import com.surycaty.tirartime.entidade.Jogador;
 import com.surycaty.tirartime.entidade.JogadorTest;
 import com.surycaty.tirartime.entidade.Time;
@@ -68,7 +69,10 @@ public class SelecionarJogadoresActivity extends AppCompatActivity {
         });
 
 
-        jogadores = JogadorTest.listaJogadores();
+        //jogadores = JogadorTest.listaJogadores();
+        JogadorDAO jogadorDao = new JogadorDAO(getApplicationContext());
+        jogadores = jogadorDao.getListaJogadores();
+
         TableLayout table = (TableLayout) findViewById(R.id.idTableLayout);
 
         //Cabecalho da Tabela

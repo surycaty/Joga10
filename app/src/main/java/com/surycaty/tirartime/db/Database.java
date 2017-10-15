@@ -4,6 +4,8 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import com.surycaty.tirartime.dao.JogadorDAO;
+
 /**
  * Created by negus on 14/10/17.
  */
@@ -19,7 +21,7 @@ public class Database extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        sqLiteDatabase.execSQL(SQL.getCreateJogador());
+        sqLiteDatabase.execSQL(JogadorDAO.getCreateJogador());
     }
 
     @Override

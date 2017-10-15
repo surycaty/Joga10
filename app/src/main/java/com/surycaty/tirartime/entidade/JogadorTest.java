@@ -13,7 +13,7 @@ public class JogadorTest {
 
         List<Jogador> lista = new ArrayList<Jogador>();
 
-        Jogador j1 = new Jogador(1, "Israel", 5);
+        /*Jogador j1 = new Jogador(1, "Israel", 5);
         lista.add(j1);
         Jogador j2 = new Jogador(2, "Honorato", 5);
         lista.add(j2);
@@ -72,7 +72,7 @@ public class JogadorTest {
         Jogador j29 = new Jogador(29, "Jogador 04", 3);
         lista.add(j29);
         Jogador j30 = new Jogador(30, "Jogador 05", 3);
-        lista.add(j30);
+        lista.add(j30);*/
 
         return lista;
     }

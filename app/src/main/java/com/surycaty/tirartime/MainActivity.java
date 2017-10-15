@@ -10,7 +10,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.surycaty.tirartime.dao.JogadorDAO;
 import com.surycaty.tirartime.db.Database;
+import com.surycaty.tirartime.entidade.Jogador;
 
 import java.util.logging.Logger;
 
@@ -26,6 +28,18 @@ public class MainActivity extends AppCompatActivity {
         try {
             db = new Database(this);
             db.open();
+
+            JogadorDAO dao = new JogadorDAO(getApplicationContext());
+
+            Jogador j1 = new Jogador(0, "Israel", "MC", 5);
+
+            dao.salvar(j1);
+            Jogador j2 = new Jogador(0, "Honorato", "MC", 5);
+            dao.salvar(j2);
+            Jogador j3 = new Jogador(0, "Geleade", "MC", 5);
+            dao.salvar(j3);
+            Jogador j4 = new Jogador(0, "Carolino", "MC", 3);
+            dao.salvar(j4);
 
             Toast.makeText(getApplicationContext(), "CONEXAO OK", Toast.LENGTH_LONG);
             Log.d("CONEXAO", "OK");
