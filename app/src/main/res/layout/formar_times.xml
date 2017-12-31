@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingBottom="5dp" android:paddingLeft="10dp"
+                android:paddingRight="10dp" android:paddingTop="5dp">
+    
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+    
+        <LinearLayout android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:orientation="vertical">
+        
+            <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+            
+                <ImageView
+                        android:id="@+id/imgEditSeraDeletado"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        app:srcCompat="@android:drawable/ic_menu_edit"/>
+    
+                <TextView
+                        android:id="@+id/txtNome"
+                        android:text="Nome Atleta"
+                        android:layout_width="140dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="6dp" android:textAlignment="gravity"
+                        android:layout_gravity="left|center_vertical"/>
+    
+                <TextView
+                        android:id="@+id/txtPosicao"
+                        android:text="POS"
+                        android:layout_width="30dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:textAlignment="gravity" android:layout_gravity="left|center_vertical"/>
+    
+                <RatingBar
+                        android:id="@+id/ratingBarGerenciamento"
+                        android:layout_height="wrap_content"
+                        android:isIndicator="true"
+                        android:numStars="5"
+                        android:rating="3"
+                        android:stepSize="1"
+                        android:visibility="visible"
+                        android:layout_width="wrap_content"
+                        style="@android:style/Widget.Material.Light.RatingBar.Small"
+                        android:layout_gravity="center_vertical" android:layout_marginLeft="6dp"/>
+
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

@@ -1,31 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.surycaty.tirartime.MainActivity">
-
+                                             xmlns:app="http://schemas.android.com/apk/res-auto"
+                                             xmlns:tools="http://schemas.android.com/tools"
+                                             android:layout_width="match_parent"
+                                             android:layout_height="match_parent"
+                                             tools:context="com.surycaty.joga10.activity.MainActivity"
+                                             android:background="@drawable/bg_inicial">
+    
     <Button
-        android:id="@+id/btnTirarTime"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Selecionar Jogadores"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.35000002" />
-
+            android:id="@+id/btnTirarTime"
+            android:layout_width="210dp"
+            android:layout_height="80dp"
+            android:text="Selecionar Atletas"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.299" android:background="@drawable/botao_principal"
+            android:textColor="@android:color/white"/>
+    
     <Button
-        android:id="@+id/btnCadJogador"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Cadastrar Jogador"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnTirarTime"
-        app:layout_constraintVertical_bias="0.237" />
+            android:text="Gerenciar Atletas"
+            android:layout_width="210dp"
+            android:layout_height="80dp"
+            android:id="@+id/btnJogador"
+            android:elevation="15dp"
+            android:layout_marginRight="0dp"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginLeft="0dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="228dp"
+            android:background="@drawable/botao_principal"
+            android:textColor="@android:color/white" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/btnTirarTime"/>
 
 </android.support.constraint.ConstraintLayout>

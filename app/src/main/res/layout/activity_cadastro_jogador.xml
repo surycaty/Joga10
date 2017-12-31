@@ -1,72 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.surycaty.tirartime.CadastroJogadorActivity">
-
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="10dp"
-        android:layout_weight="1"
-        android:orientation="vertical"
-        android:weightSum="1">
-
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/inpTxt"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
+                                             xmlns:app="http://schemas.android.com/apk/res-auto"
+                                             xmlns:tools="http://schemas.android.com/tools"
+                                             android:layout_width="match_parent"
+                                             android:layout_height="match_parent"
+                                             tools:context="com.surycaty.joga10.activity.CadastroJogadorActivity"
+                                             tools:layout_editor_absoluteY="25dp" tools:layout_editor_absoluteX="0dp">
+    
+    <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:id="@+id/txtNome"
+            android:layout_weight="1"
+            android:hint="Nome do Atleta"
             android:layout_marginTop="30dp"
-            android:orientation="horizontal"
-            android:visibility="visible">
-
-            <EditText
-                android:id="@+id/txtNome"
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:layout_marginTop="30dp"
-                android:hint="Nome Jogador"
-                android:singleLine="true"
-                android:textSize="24dp"
-                android:visibility="visible" />
-
-            <Spinner
-                android:id="@+id/spinner"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:visibility="visible"
-                tools:layout_editor_absoluteX="16dp"
-                tools:layout_editor_absoluteY="119dp" />
-        </android.support.design.widget.TextInputLayout>
-
-        <RatingBar
+            app:layout_constraintTop_toTopOf="parent" android:layout_marginRight="10dp"
+            app:layout_constraintRight_toRightOf="parent" android:layout_marginLeft="10dp"
+            app:layout_constraintLeft_toLeftOf="parent" android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"/>
+    
+    <RatingBar
             android:id="@+id/ratingBar"
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:layout_marginStart="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
             android:isIndicator="false"
             android:numStars="5"
             android:rating="3"
             android:stepSize="1"
             android:visibility="visible"
-            tools:layout_editor_absoluteX="131dp"
-            tools:layout_editor_absoluteY="119dp"
-            tools:scaleX="0.8"
-            tools:scaleY="0.8" />
-
-        <Button
+            tools:scaleX="1"
+            tools:scaleY="1" android:layout_weight="1"
+            android:layout_alignParentBottom="true" android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp" app:layout_constraintTop_toBottomOf="@+id/txtNome"
+            android:layout_marginRight="10dp" app:layout_constraintRight_toRightOf="parent"
+            style="@android:style/Widget.Material.Light.RatingBar.Small" android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"/>
+    <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/spinner" android:layout_weight="1"
+            android:layout_marginTop="20dp" app:layout_constraintTop_toBottomOf="@+id/txtNome"
+            android:layout_marginLeft="10dp" app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginStart="10dp"/>
+    <Button
             android:id="@+id/btnSalvar"
-            android:layout_width="match_parent"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
+            android:text="Salvar" android:layout_weight="1"
             android:layout_marginTop="30dp"
-            android:text="Salvar" />
-
-    </LinearLayout>
+            app:layout_constraintTop_toBottomOf="@+id/ratingBar"
+            android:layout_marginRight="10dp" app:layout_constraintRight_toRightOf="parent"/>
 
 </android.support.constraint.ConstraintLayout>
