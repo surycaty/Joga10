@@ -1,10 +1,12 @@
 package com.surycaty.joga10.activity
 
+import android.content.Context
 import android.content.Intent
-import android.graphics.Color
 import android.os.Bundle
+import android.os.Parcel
 import android.support.v7.app.AppCompatActivity
 import android.view.View
+import android.view.ViewGroup
 import android.widget.*
 import com.surycaty.joga10.R
 import com.surycaty.joga10.dao.JogadorDAO
@@ -15,11 +17,13 @@ import com.surycaty.joga10.util.Utils
 import kotlinx.android.synthetic.main.activity_selecionar_jogadores.*
 import java.io.Serializable
 import java.util.*
+import kotlin.collections.ArrayList
 
 class SelecionarJogadoresActivity : AppCompatActivity() {
 
     private var jogadores: List<Jogador> = ArrayList()
-    private val selecionados = ArrayList<CheckBox>()
+    private var selecionados = ArrayList<Jogador>()
+    private var adapter : SelecionarJogadoresActivity.CadastroJogadorAdapter? = null
 
     private var qtdJogadores = 5
 
@@ -27,6 +31,9 @@ class SelecionarJogadoresActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_selecionar_jogadores)
 
+        this.adapter = SelecionarJogadoresActivity.CadastroJogadorAdapter(this@SelecionarJogadoresActivity)
+
+        lvSelecionarAtleta.adapter = this.adapter
 
         btnUpJogadores.setOnClickListener {
             if (qtdJogadores < 11)
@@ -41,65 +48,6 @@ class SelecionarJogadoresActivity : AppCompatActivity() {
                 --qtdJogadores
 
             numJogadores.setText(qtdJogadores.toString())
-        }
-
-        val jogadorDao = JogadorDAO(applicationContext)
-        jogadores = jogadorDao.listaJogadores
-
-        val table = findViewById<View>(R.id.idTableLayout) as TableLayout
-
-        var isPar = false
-        var isPrimeira = true
-
-        for (j in jogadores) {
-
-            val ck = CheckBox(applicationContext)
-            ck.id = j.id
-            ck.text = j.nome
-            ck.textSize = 16f
-            ck.setTextColor(Color.BLACK)
-            ck.setPadding(10, 30, 10, 30)
-
-            selecionados.add(ck)
-
-            val row = TableRow(applicationContext)
-
-            row.addView(ck)
-
-            val textView = TextView(this)
-            textView.textSize = 16f
-            textView.setTextColor(Color.BLACK)
-            textView.text = j.posicao
-            textView.setPadding(10, 32, 10, 30)
-            row.addView(textView)
-
-            val ratingBar = RatingBar(applicationContext)
-            ratingBar.numStars = 5
-            ratingBar.rating = j.level.toFloat()
-            ratingBar.isEnabled = false
-            ratingBar.scaleY = 0.5f
-            ratingBar.scaleX = 0.5f
-
-            ratingBar.stepSize = 1f
-
-            row.addView(ratingBar)
-
-            if (isPrimeira) {
-                isPar = true
-                isPrimeira = false
-            } else {
-                if (isPar) {
-                    row.setBackgroundColor(Color.rgb(200, 200, 200))
-                    isPar = false
-                } else {
-                    row.setBackgroundColor(Color.WHITE)
-                    isPar = true
-                }
-            }
-
-            row.setPadding(2,-26,2,-30)
-
-            table.addView(row)
         }
 
         btnTirarTime.setOnClickListener(View.OnClickListener {
@@ -128,12 +76,12 @@ class SelecionarJogadoresActivity : AppCompatActivity() {
 
             val lista = ArrayList<Jogador>()
 
-            for (ck in selecionados) {
-                if (ck.isChecked) {
-                    for (j in jogadores) {
-                        if (j.id == ck.id)
-                            lista.add(j)
-                    }
+            selecionados = this.adapter!!.list!!
+            //val lista = buscarSelecionados()
+
+            for (sel in selecionados) {
+                if (sel.isSelecionado) {
+                    lista.add(sel)
                 }
             }
 
@@ -278,4 +226,59 @@ class SelecionarJogadoresActivity : AppCompatActivity() {
         return if (aux.isEmpty()) null else aux[0]
     }
 
+    class CadastroJogadorAdapter() : BaseAdapter() {
+
+        var list : ArrayList<Jogador>? = null
+        lateinit var context : Context
+
+        constructor(context: Context): this() {
+            var jogadorDao : JogadorDAO = JogadorDAO(context)
+            this.list = jogadorDao.listaJogadores
+
+            this.context = context
+
+        }
+
+        override fun getView(posicao: Int, view: View?, p2: ViewGroup?): View {
+            var convertView : View? = view
+
+            if(convertView == null) {
+                convertView = View.inflate(context, R.layout.formar_times, null)
+            }
+
+            var txtNomeJogador : CheckBox = convertView?.findViewById(R.id.ckAtleta) as CheckBox
+            var txtPosicaoJogador : TextView = convertView?.findViewById(R.id.txtPosicaoSelecionar) as TextView
+
+            txtNomeJogador.text = list?.get(posicao)?.nome
+            txtPosicaoJogador.text = list?.get(posicao)?.posicao
+
+            txtNomeJogador.setOnClickListener {
+                list?.get(posicao)!!.isSelecionado = txtNomeJogador.isChecked
+            }
+
+
+            return convertView
+        }
+
+        override fun getItem(p0: Int): Jogador? {
+            return list?.get(p0)
+        }
+
+        override fun getItemId(p0: Int): Long {
+            return p0.toLong()
+        }
+
+        override fun getCount(): Int {
+            return list!!.size
+        }
+
+        internal var sp: Spinner? = null
+        private var arrayAdapter: ArrayAdapter<String>? = null
+        internal var posicoes = JogadorDAO.listaPosicoes
+
+        constructor(parcel: Parcel) : this() {
+            posicoes = parcel.createStringArray()
+        }
+
+    }
 }

@@ -140,7 +140,7 @@ class GerenciarAtletaActivity : AppCompatActivity() {
                     mensagem = Utils.mensagem(context, textoErro)
                     mensagem!!.show()
 
-                    this.list = jogadorDao.listaJogadores
+                    //this.list = jogadorDao.listaJogadores
 
                     //this.arrayAdapter!!.remove(this.arrayAdapter!!.getItem(posicao))
 

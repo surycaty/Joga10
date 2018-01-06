@@ -12,6 +12,7 @@ class Jogador : Serializable {
     var nome: String? = null
     var posicao: String? = null
     var level: Int = 0
+    var isSelecionado = false
 
     constructor() {}
 

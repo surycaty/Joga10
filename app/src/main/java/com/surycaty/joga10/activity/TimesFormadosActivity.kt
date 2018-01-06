@@ -76,8 +76,8 @@ class TimesFormadosActivity : AppCompatActivity() {
                 ratingBar.numStars = 5
                 ratingBar.rating = j.level.toFloat()
                 ratingBar.isEnabled = false
-                ratingBar.scaleY = 0.8f
-                ratingBar.scaleX = 0.8f
+                ratingBar.scaleY = 0.5f
+                ratingBar.scaleX = 0.5f
 
                 row.addView(ratingBar)
 

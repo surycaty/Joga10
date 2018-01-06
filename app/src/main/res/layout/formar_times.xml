@@ -19,23 +19,14 @@
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
-            
-                <ImageView
-                        android:id="@+id/imgEditSeraDeletado"
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
-                        app:srcCompat="@android:drawable/ic_menu_edit"/>
+    
+                <CheckBox
+                        android:text="CheckBox"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content" android:id="@+id/ckAtleta" android:layout_weight="1"/>
     
                 <TextView
-                        android:id="@+id/txtNome"
-                        android:text="Nome Atleta"
-                        android:layout_width="140dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="6dp" android:textAlignment="gravity"
-                        android:layout_gravity="left|center_vertical"/>
-    
-                <TextView
-                        android:id="@+id/txtPosicao"
+                        android:id="@+id/txtPosicaoSelecionar"
                         android:text="POS"
                         android:layout_width="30dp"
                         android:layout_height="wrap_content"
@@ -43,7 +34,7 @@
                         android:textAlignment="gravity" android:layout_gravity="left|center_vertical"/>
     
                 <RatingBar
-                        android:id="@+id/ratingBarGerenciamento"
+                        android:id="@+id/rbNivelSelecionar"
                         android:layout_height="wrap_content"
                         android:isIndicator="true"
                         android:numStars="5"
@@ -52,7 +43,8 @@
                         android:visibility="visible"
                         android:layout_width="wrap_content"
                         style="@android:style/Widget.Material.Light.RatingBar.Small"
-                        android:layout_gravity="center_vertical" android:layout_marginLeft="6dp"/>
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="6dp"/>
 
 
             </LinearLayout>
