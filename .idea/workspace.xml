@@ -125,6 +125,7 @@
     <session id="1068882967">
       <usages-collector id="statistics.file.extensions.open">
         <counts>
+          <entry key="gitignore" value="1" />
           <entry key="java" value="2" />
           <entry key="kt" value="9" />
           <entry key="xml" value="16" />
@@ -134,6 +135,7 @@
         <counts>
           <entry key="JAVA" value="2" />
           <entry key="Kotlin" value="9" />
+          <entry key="PLAIN_TEXT" value="1" />
           <entry key="XML" value="16" />
         </counts>
       </usages-collector>
@@ -166,7 +168,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/surycaty/joga10/activity/SelecionarJogadoresActivity.kt">
           <provider selected="true" editor-type-id="text-editor">
             <state>
@@ -174,15 +176,6 @@
                 <element signature="n#!!block;n#sortearTimes#0;n#!!block;n#SelecionarJogadoresActivity#0" />
                 <element signature="n#!!block;n#selecionaJogador#0;n#!!block;n#SelecionarJogadoresActivity#0" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/test/java/com/surycaty/joga10/ExampleUnitTest.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="16" column="1" lean-forward="true" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -2377,21 +2370,6 @@
               <item name="Joga10" type="b2602c69:ProjectViewProjectNode" />
               <item name="Joga10" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
             </path>
-            <path>
-              <item name="Joga10" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Joga10" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name=".gradle" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Joga10" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Joga10" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name=".gradle" type="462c0819:PsiDirectoryNode" />
-              <item name="4.4" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Joga10" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -2403,7 +2381,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="android.sdk.path" value="$USER_HOME$/Android/Sdk" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539911063868" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539911585607" />
     <property name="device.picker.selection" value="Nexus_6_-_API_21" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../git/Joga10" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -2481,7 +2459,14 @@
       <option name="project" value="LOCAL" />
       <updated>1539910937577</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Comitando direto do IntelliJ">
+      <created>1539911265831</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1539911265831</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -2755,6 +2740,16 @@
       </provider>
       <provider editor-type-id="android-designer2" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/test/java/com/surycaty/joga10/ExampleUnitTest.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="11" column="23" lean-forward="true" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/surycaty/joga10/activity/SelecionarJogadoresActivity.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -2762,13 +2757,6 @@
             <element signature="n#!!block;n#sortearTimes#0;n#!!block;n#SelecionarJogadoresActivity#0" />
             <element signature="n#!!block;n#selecionaJogador#0;n#!!block;n#SelecionarJogadoresActivity#0" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/test/java/com/surycaty/joga10/ExampleUnitTest.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="16" column="1" lean-forward="true" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
         </state>
       </provider>
     </entry>
