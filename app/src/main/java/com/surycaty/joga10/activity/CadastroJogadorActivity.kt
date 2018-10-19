@@ -43,25 +43,25 @@ class CadastroJogadorActivity : AppCompatActivity() {
 
         sp!!.adapter = arrayAdapter
 
-        val btnSalvar = findViewById<View>(R.id.btnSalvar) as Button
+        val btnSalvar = findViewById<Button>(R.id.btnSalvar)
 
         btnSalvar.setOnClickListener(View.OnClickListener {
             var mensagem: Toast? = null
-            var hasErro = false
+            //var hasErro = false
             var textoErro = "Jogador Salvo com Sucesso"
-            val nomeJogador = findViewById<View>(R.id.txtNome) as TextView
-            val posicao = findViewById<View>(R.id.spinner) as Spinner
-            val estrelas = findViewById<View>(R.id.ratingBar) as RatingBar
+            val nomeJogador = findViewById<TextView>(R.id.txtNome)
+            val posicao = findViewById<Spinner>(R.id.spinner)
+            val estrelas = findViewById<RatingBar>(R.id.ratingBar)
 
             if(nomeJogador.text == null || "".equals(nomeJogador.text)) {
                 mensagem = Utils.mensagem(applicationContext, "Campo Nome é obrigatório")
-                mensagem!!.show()
+                mensagem.show()
                 return@OnClickListener
             }
 
             if(posicao.selectedItem == null || "".equals(posicao.selectedItem)) {
                 mensagem = Utils.mensagem(applicationContext, "Campo Posição é obrigatório")
-                mensagem!!.show()
+                mensagem.show()
 
                 return@OnClickListener
             }
@@ -77,7 +77,7 @@ class CadastroJogadorActivity : AppCompatActivity() {
             dao.salvar(jogador)
 
             mensagem = Utils.mensagem(applicationContext, textoErro)
-            mensagem!!.show()
+            mensagem.show()
 
             val returnIntent = Intent()
             returnIntent.putExtra("RESULTADO", "SUCESSO")

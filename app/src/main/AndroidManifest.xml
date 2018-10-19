@@ -16,11 +16,10 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".activity.TimesFormadosActivity"/>
-        <activity android:name=".activity.SelecionarJogadoresActivity"/>
-        <activity android:name=".activity.CadastroJogadorActivity"/>
-        <activity android:name=".activity.GerenciarAtletaActivity">
-        </activity>
+        <activity android:name=".activity.TimesFormadosActivity" />
+        <activity android:name=".activity.SelecionarJogadoresActivity" />
+        <activity android:name=".activity.CadastroJogadorActivity" />
+        <activity android:name=".activity.GerenciarAtletaActivity" />
     </application>
 
 </manifest>

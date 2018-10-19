@@ -5,8 +5,10 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.Parcel
 import android.support.v7.app.AppCompatActivity
+import android.util.Log
 import android.view.View
 import android.view.ViewGroup
+import android.view.ViewOutlineProvider
 import android.widget.*
 import com.surycaty.joga10.R
 import com.surycaty.joga10.dao.JogadorDAO
@@ -22,7 +24,6 @@ import kotlin.collections.ArrayList
 class SelecionarJogadoresActivity : AppCompatActivity() {
 
     private var jogadores: List<Jogador> = ArrayList()
-    private var selecionados = ArrayList<Jogador>()
     private var adapter : SelecionarJogadoresActivity.CadastroJogadorAdapter? = null
 
     private var qtdJogadores = 5
@@ -31,7 +32,10 @@ class SelecionarJogadoresActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_selecionar_jogadores)
 
-        this.adapter = SelecionarJogadoresActivity.CadastroJogadorAdapter(this@SelecionarJogadoresActivity)
+        var jogadorDao = JogadorDAO(this)
+        jogadores = jogadorDao.listaJogadores
+
+        this.adapter = SelecionarJogadoresActivity.CadastroJogadorAdapter(this@SelecionarJogadoresActivity, jogadores)
 
         lvSelecionarAtleta.adapter = this.adapter
 
@@ -69,17 +73,17 @@ class SelecionarJogadoresActivity : AppCompatActivity() {
 
             if (hasErro) {
                 mensagem = Utils.mensagem(applicationContext, textoErro)
-                mensagem!!.show()
+                mensagem.show()
 
                 return@OnClickListener
             }
 
             val lista = ArrayList<Jogador>()
 
-            selecionados = this.adapter!!.list!!
+            //selecionados = adapter!!.list
             //val lista = buscarSelecionados()
 
-            for (sel in selecionados) {
+            for (sel in this.adapter!!.list) {
                 if (sel.isSelecionado) {
                     lista.add(sel)
                 }
@@ -228,12 +232,12 @@ class SelecionarJogadoresActivity : AppCompatActivity() {
 
     class CadastroJogadorAdapter() : BaseAdapter() {
 
-        var list : ArrayList<Jogador>? = null
+        var list : List<Jogador> = ArrayList()
         lateinit var context : Context
 
-        constructor(context: Context): this() {
-            var jogadorDao : JogadorDAO = JogadorDAO(context)
-            this.list = jogadorDao.listaJogadores
+        constructor(context: Context, jogadores: List<Jogador>): this() {
+
+            this.list = jogadores
 
             this.context = context
 
@@ -246,22 +250,26 @@ class SelecionarJogadoresActivity : AppCompatActivity() {
                 convertView = View.inflate(context, R.layout.formar_times, null)
             }
 
-            var txtNomeJogador : CheckBox = convertView?.findViewById(R.id.ckAtleta) as CheckBox
-            var txtPosicaoJogador : TextView = convertView?.findViewById(R.id.txtPosicaoSelecionar) as TextView
+            var jogador = this.getItem(posicao);
+
+            var txtNomeJogador = convertView!!.findViewById(R.id.ckAtleta) as CheckBox
+            var txtPosicaoJogador = convertView.findViewById(R.id.txtPosicaoSelecionar) as TextView
+            var rtNivel = convertView.findViewById(R.id.rbNivelSelecionar) as RatingBar
 
             txtNomeJogador.text = list?.get(posicao)?.nome
+            txtNomeJogador.isChecked = list?.get(posicao)?.isSelecionado
             txtPosicaoJogador.text = list?.get(posicao)?.posicao
+            rtNivel.rating = list?.get(posicao)?.level.toFloat()
 
             txtNomeJogador.setOnClickListener {
                 list?.get(posicao)!!.isSelecionado = txtNomeJogador.isChecked
             }
 
-
             return convertView
         }
 
-        override fun getItem(p0: Int): Jogador? {
-            return list?.get(p0)
+        override fun getItem(p0: Int): Jogador {
+            return list.get(p0)
         }
 
         override fun getItemId(p0: Int): Long {
@@ -269,7 +277,7 @@ class SelecionarJogadoresActivity : AppCompatActivity() {
         }
 
         override fun getCount(): Int {
-            return list!!.size
+            return list.size
         }
 
         internal var sp: Spinner? = null

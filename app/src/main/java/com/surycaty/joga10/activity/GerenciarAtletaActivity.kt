@@ -17,11 +17,12 @@ import com.surycaty.joga10.entidade.Jogador
 import com.surycaty.joga10.util.Utils
 import kotlinx.android.synthetic.main.activity_gerenciar_atleta.*
 import java.util.*
+import kotlin.collections.ArrayList
 
 
 class GerenciarAtletaActivity : AppCompatActivity() {
 
-    private var jogadores: List<Jogador> = mutableListOf()
+    private var jogadores = ArrayList<Jogador>()
     internal var sp: Spinner? = null
     private var arrayAdapter: ArrayAdapter<String>? = null
     internal var posicoes = JogadorDAO.listaPosicoes
@@ -58,7 +59,7 @@ class GerenciarAtletaActivity : AppCompatActivity() {
 
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent) {
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         if (requestCode == CHAMADA) {
             if (resultCode == Activity.RESULT_OK) {
 
@@ -77,7 +78,8 @@ class GerenciarAtletaActivity : AppCompatActivity() {
         lateinit var context : Context
 
         constructor(context: Context): this() {
-            var jogadorDao : JogadorDAO = JogadorDAO(context)
+
+            var jogadorDao = JogadorDAO(context)
             this.list = jogadorDao.listaJogadores
 
             this.context = context
@@ -91,16 +93,18 @@ class GerenciarAtletaActivity : AppCompatActivity() {
                 convertView = View.inflate(context, R.layout.itens_jogadores, null)
             }
 
-            var txtNomeJogador : TextView = convertView?.findViewById(R.id.txtNome) as TextView
-            var txtPosicaoJogador : TextView = convertView?.findViewById(R.id.txtPosicao) as TextView
-            var imgEdit : ImageView = convertView?.findViewById(R.id.imgEdit)
-            var imgDelete : ImageView = convertView?.findViewById(R.id.imgDelete)
+            var txtNomeJogador = convertView?.findViewById<TextView>(R.id.txtNome)
+            var txtPosicaoJogador = convertView?.findViewById<TextView>(R.id.txtPosicao)
+            var imgEdit = convertView?.findViewById<ImageView>(R.id.imgEdit)
+            var imgDelete = convertView?.findViewById<ImageView>(R.id.imgDelete)
+            var rtNivel = convertView!!.findViewById<RatingBar>(R.id.ratingBarGerenciamento)
 
-            txtNomeJogador.text = list?.get(posicao)?.nome
-            txtPosicaoJogador.text = list?.get(posicao)?.posicao
+            txtNomeJogador!!.text = list?.get(posicao)?.nome
+            txtPosicaoJogador!!.text = list?.get(posicao)?.posicao
+            rtNivel.rating = list?.get(posicao)?.level!!.toFloat()
 
 
-            imgEdit.setOnClickListener {
+            imgEdit!!.setOnClickListener {
 
                 var mensagem: Toast? = null
                 var hasErro = false
@@ -112,7 +116,7 @@ class GerenciarAtletaActivity : AppCompatActivity() {
                 intent.putExtra("ID", list?.get(posicao)?.id)
                 intent.putExtra("NOME", list?.get(posicao)?.nome)
                 intent.putExtra("POSICAO", list?.get(posicao)?.posicao)
-                intent.putExtra("NIVEL", list?.get(posicao)?.level)
+                intent.putExtra("NIVEL", list?.get(posicao)!!.level)
 
                 startActivity(context, intent, null)
 
@@ -121,7 +125,7 @@ class GerenciarAtletaActivity : AppCompatActivity() {
 
             }
 
-            imgDelete.setOnClickListener {
+            imgDelete!!.setOnClickListener {
 
                 val simpleAlert = AlertDialog.Builder(context).create()
                 simpleAlert.setTitle("Atenção")

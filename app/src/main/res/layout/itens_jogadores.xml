@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 xmlns:app="http://schemas.android.com/apk/res-auto"
-                xmlns:tools="http://schemas.android.com/tools"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:paddingBottom="5dp" android:paddingLeft="10dp"
-                android:paddingRight="10dp" android:paddingTop="5dp">
-    
-    <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+                android:paddingBottom="5dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="5dp">
     
         <LinearLayout android:layout_width="match_parent"
                       android:layout_height="wrap_content"
@@ -28,14 +25,18 @@
     
                 <ImageView
                         android:layout_width="25dp"
-                        android:layout_height="25dp" app:srcCompat="@android:drawable/ic_menu_delete"
-                        android:id="@+id/imgDelete" android:layout_weight="1" android:layout_marginLeft="5dp"/>
+                        android:layout_height="25dp"
+                        app:srcCompat="@android:drawable/ic_menu_delete"
+                        android:id="@+id/imgDelete"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="5dp"/>
                 <TextView
                         android:id="@+id/txtNome"
                         android:text="Nome Atleta"
                         android:layout_width="140dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="6dp" android:textAlignment="gravity"
+                        android:layout_marginLeft="6dp"
+                        android:textAlignment="gravity"
                         android:layout_gravity="left|center_vertical"/>
     
                 <TextView
@@ -44,7 +45,8 @@
                         android:layout_width="30dp"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
-                        android:textAlignment="gravity" android:layout_gravity="left|center_vertical"/>
+                        android:textAlignment="gravity"
+                        android:layout_gravity="left|center_vertical"/>
     
                 <RatingBar
                         android:id="@+id/ratingBarGerenciamento"
@@ -56,10 +58,10 @@
                         android:visibility="visible"
                         android:layout_width="wrap_content"
                         style="@android:style/Widget.Material.Light.RatingBar.Small"
-                        android:layout_gravity="center_vertical" android:layout_marginLeft="6dp"/>
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="6dp"/>
 
 
             </LinearLayout>
         </LinearLayout>
-    </ScrollView>
 </RelativeLayout>

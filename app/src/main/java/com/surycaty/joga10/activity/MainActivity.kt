@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
             Log.d("CONEXAO", "NOK")
         }
 
-        val btnTirarTime = findViewById<View>(R.id.btnTirarTime) as Button
+        val btnTirarTime = findViewById(R.id.btnTirarTime) as Button
 
         btnTirarTime.setOnClickListener {
             val it = Intent(this@MainActivity, SelecionarJogadoresActivity::class.java)
@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(it)
         }
 
-        val btnGerenciarJogadores = findViewById<View>(R.id.btnJogador) as Button
+        val btnGerenciarJogadores = findViewById(R.id.btnJogador) as Button
 
         btnGerenciarJogadores.setOnClickListener{
             val it = Intent(this@MainActivity, GerenciarAtletaActivity::class.java)

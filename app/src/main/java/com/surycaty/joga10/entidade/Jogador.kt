@@ -23,4 +23,12 @@ class Jogador : Serializable {
         this.level = level
     }
 
+    constructor(id: Int, nome: String, posicao: String, level: Int, selecionado: Boolean) {
+        this.id = id
+        this.nome = nome
+        this.posicao = posicao
+        this.level = level
+        this.isSelecionado = selecionado
+    }
+
 }

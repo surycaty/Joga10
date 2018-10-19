@@ -29,7 +29,7 @@ class TimesFormadosActivity : AppCompatActivity() {
         val i = intent
         times = i.getSerializableExtra("timesFormados") as List<Time>
 
-        val table = findViewById<View>(R.id.idTableTimesFormados) as TableLayout
+        val table = findViewById(R.id.idTableTimesFormados) as TableLayout
 
         for (time in times!!) {
 
