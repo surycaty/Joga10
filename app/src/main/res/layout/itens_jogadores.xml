@@ -33,6 +33,7 @@
                 <TextView
                         android:id="@+id/txtNome"
                         android:text="Nome Atleta"
+                        android:textSize="@dimen/font_player_name"
                         android:layout_width="140dp"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="6dp"

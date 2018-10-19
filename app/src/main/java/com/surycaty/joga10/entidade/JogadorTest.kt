@@ -12,17 +12,17 @@ object JogadorTest {
 
         var lista: ArrayList<Jogador> = ArrayList();
 
-        var j1: Jogador = Jogador(1, "Israel", "",5, false);
+        var j1: Jogador = Jogador(1, "Israel", "ATA",5, false);
         lista.add(j1);
-        var j2 = Jogador(2, "Honorato", "",5, true);
+        var j2 = Jogador(2, "Honorato", "MC",5, false);
         lista.add(j2);
-        var j3: Jogador = Jogador(3, "Geleade", "",5, false);
+        var j3: Jogador = Jogador(3, "Geleade", "MD",5, false);
         lista.add(j3);
-        var j4: Jogador = Jogador(4, "Carolino", "",5, false);
+        var j4: Jogador = Jogador(4, "Carolino", "MD",5, false);
         lista.add(j4);
-        var j5: Jogador = Jogador(5, "Magão", "",5, true);
+        var j5: Jogador = Jogador(5, "Magão", "",5, false);
         lista.add(j5);
-        var j6: Jogador = Jogador(6, "Valber", "",5, false);
+        var j6: Jogador = Jogador(6, "Valber", "ZAG",5, false);
         lista.add(j6);
         var j7: Jogador = Jogador(7, "Dionísio", "",5, false);
         lista.add(j7);
@@ -70,7 +70,7 @@ object JogadorTest {
         lista.add(j28);
         var j29: Jogador = Jogador(29, "Jogador 04", "",5, false);
         lista.add(j29);
-        var j30: Jogador = Jogador(30, "Jogador 05", "",5, false);
+        var j30: Jogador = Jogador(30, "Jogador 05 Com O Nome Para Teste", "",5, false);
         lista.add(j30);
 
         return lista

@@ -22,14 +22,15 @@
                         android:layout_height="wrap_content"
                         android:id="@+id/ckAtleta"
                         android:layout_weight="1"
-                        android:textSize="18sp"/>
+                        android:layout_marginStart="0dp"
+                        android:textSize="@dimen/font_player_name"/>
     
                 <TextView
                         android:id="@+id/txtPosicaoSelecionar"
                         android:text="POS"
                         android:layout_width="30dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
+                        android:layout_marginRight="2dp"
                         android:textAlignment="gravity"
                         android:layout_gravity="left|center_vertical"/>
     
@@ -44,7 +45,7 @@
                         android:layout_width="wrap_content"
                         style="@android:style/Widget.Material.Light.RatingBar.Small"
                         android:layout_gravity="center_vertical"
-                        android:layout_marginLeft="6dp"/>
+                        android:layout_marginRight="2dp"/>
 
             </LinearLayout>
     </ScrollView>

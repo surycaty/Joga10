@@ -9,17 +9,20 @@
             android:roundIcon="@drawable/logo_app_around"
             android:supportsRtl="true"
             android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".activity.MainActivity">
+        <activity
+                android:name=".activity.MainActivity"
+                android:configChanges="orientation|keyboardHidden|screenSize"
+                android:label="@string/title_activity_main">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".activity.TimesFormadosActivity" />
-        <activity android:name=".activity.SelecionarJogadoresActivity" />
-        <activity android:name=".activity.CadastroJogadorActivity" />
-        <activity android:name=".activity.GerenciarAtletaActivity" />
+        <activity android:name=".activity.TimesFormadosActivity"/>
+        <activity android:name=".activity.SelecionarJogadoresActivity"/>
+        <activity android:name=".activity.CadastroJogadorActivity"/>
+        <activity android:name=".activity.GerenciarAtletaActivity"/>
     </application>
 
 </manifest>

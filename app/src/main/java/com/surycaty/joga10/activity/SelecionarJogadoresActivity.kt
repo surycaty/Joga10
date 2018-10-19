@@ -33,7 +33,7 @@ class SelecionarJogadoresActivity : AppCompatActivity() {
         setContentView(R.layout.activity_selecionar_jogadores)
 
         var jogadorDao = JogadorDAO(this)
-        jogadores = jogadorDao.listaJogadores
+        jogadores = JogadorTest.listaJogadores() //jogadorDao.listaJogadores
 
         this.adapter = SelecionarJogadoresActivity.CadastroJogadorAdapter(this@SelecionarJogadoresActivity, jogadores)
 

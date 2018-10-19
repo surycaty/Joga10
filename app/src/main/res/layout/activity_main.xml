@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                                             xmlns:app="http://schemas.android.com/apk/res-auto"
-                                             xmlns:tools="http://schemas.android.com/tools"
-                                             android:layout_width="match_parent"
-                                             android:layout_height="match_parent"
-                                             tools:context="com.surycaty.joga10.activity.MainActivity"
-                                             android:background="@drawable/bg_inicial">
-    
+<android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+         xmlns:app="http://schemas.android.com/apk/res-auto"
+         xmlns:tools="http://schemas.android.com/tools"
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+        tools:context="com.surycaty.joga10.activity.MainActivity"
+         android:background="@drawable/bg_inicial">
+
     <Button
             android:id="@+id/btnTirarTime"
             android:layout_width="210dp"
             android:layout_height="80dp"
-            android:text="Selecionar Atletas"
+            android:text="@string/selecionar_jogadores"
             android:textSize="16sp"
             android:textStyle="bold"
             android:textAlignment="center"
@@ -23,7 +24,7 @@
             android:textColor="@android:color/white"/>
     
     <Button
-            android:text="Gerenciar Atletas"
+            android:text="@string/gerenciar_atletas"
             android:layout_width="210dp"
             android:layout_height="80dp"
             android:id="@+id/btnJogador"
