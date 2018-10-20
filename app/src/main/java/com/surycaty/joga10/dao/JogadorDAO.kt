@@ -2,20 +2,16 @@ package com.surycaty.joga10.dao
 
 import android.content.ContentValues
 import android.content.Context
-import android.database.Cursor
 import android.database.SQLException
 import android.database.sqlite.SQLiteDatabase
 import android.util.Log
-
 import com.surycaty.joga10.db.Database
 import com.surycaty.joga10.entidade.Jogador
-
-import java.util.ArrayList
+import java.util.*
 
 /**
- * Created by negus on 14/10/17.
+ * Created by Adriano Surycaty on 14/10/17.
  */
-
 class JogadorDAO(private val context: Context?) {
 
     private val tabela = "JOGADOR"

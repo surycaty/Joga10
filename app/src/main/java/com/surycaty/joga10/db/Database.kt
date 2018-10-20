@@ -7,9 +7,8 @@ import android.database.sqlite.SQLiteOpenHelper
 import com.surycaty.joga10.dao.JogadorDAO
 
 /**
- * Created by negus on 09/12/17.
+ * Created by Adriano Surycaty on 09/12/17.
  */
-
 class Database(context: Context?) : SQLiteOpenHelper(context, "JOGA10", null, 1) {
 
     override fun onCreate(sqLiteDatabase: SQLiteDatabase) {

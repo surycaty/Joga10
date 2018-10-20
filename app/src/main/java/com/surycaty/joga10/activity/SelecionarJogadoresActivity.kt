@@ -5,10 +5,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.Parcel
 import android.support.v7.app.AppCompatActivity
-import android.util.Log
 import android.view.View
 import android.view.ViewGroup
-import android.view.ViewOutlineProvider
 import android.widget.*
 import com.surycaty.joga10.R
 import com.surycaty.joga10.dao.JogadorDAO
@@ -32,8 +30,8 @@ class SelecionarJogadoresActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_selecionar_jogadores)
 
-        var jogadorDao = JogadorDAO(this)
-        jogadores = JogadorTest.listaJogadores() //jogadorDao.listaJogadores
+        val jogadorDao = JogadorDAO(this)
+        jogadores = jogadorDao.listaJogadores
 
         this.adapter = SelecionarJogadoresActivity.CadastroJogadorAdapter(this@SelecionarJogadoresActivity, jogadores)
 
@@ -55,11 +53,11 @@ class SelecionarJogadoresActivity : AppCompatActivity() {
         }
 
         btnTirarTime.setOnClickListener(View.OnClickListener {
-            var mensagem: Toast? = null
+            val mensagem: Toast?
             var hasErro = false
             var textoErro = ""
 
-            qtdJogadores = Integer.valueOf(numJogadores.text.toString())!!
+            qtdJogadores = Integer.valueOf(numJogadores.text.toString())
 
             if (qtdJogadores < 1 || qtdJogadores > 11) {
 
@@ -80,9 +78,6 @@ class SelecionarJogadoresActivity : AppCompatActivity() {
 
             val lista = ArrayList<Jogador>()
 
-            //selecionados = adapter!!.list
-            //val lista = buscarSelecionados()
-
             for (sel in this.adapter!!.list) {
                 if (sel.isSelecionado) {
                     lista.add(sel)
@@ -91,7 +86,7 @@ class SelecionarJogadoresActivity : AppCompatActivity() {
 
             if (lista.isEmpty() || lista.size < qtdJogadores * 2) {
                 mensagem = Utils.mensagem(applicationContext, "Número de jogadores insulficiente para formar times.\nFavor Verificar o Nº de jogadores por times")
-                mensagem!!.show()
+                mensagem.show()
                 return@OnClickListener
             }
 
@@ -250,19 +245,19 @@ class SelecionarJogadoresActivity : AppCompatActivity() {
                 convertView = View.inflate(context, R.layout.formar_times, null)
             }
 
-            var jogador = this.getItem(posicao);
+            var jogador = this.getItem(posicao)
 
-            var txtNomeJogador = convertView!!.findViewById(R.id.ckAtleta) as CheckBox
-            var txtPosicaoJogador = convertView.findViewById(R.id.txtPosicaoSelecionar) as TextView
-            var rtNivel = convertView.findViewById(R.id.rbNivelSelecionar) as RatingBar
+            val txtNomeJogador = convertView!!.findViewById(R.id.ckAtleta) as CheckBox
+            val txtPosicaoJogador = convertView.findViewById(R.id.txtPosicaoSelecionar) as TextView
+            val rtNivel = convertView.findViewById(R.id.rbNivelSelecionar) as RatingBar
 
-            txtNomeJogador.text = list?.get(posicao)?.nome
-            txtNomeJogador.isChecked = list?.get(posicao)?.isSelecionado
-            txtPosicaoJogador.text = list?.get(posicao)?.posicao
-            rtNivel.rating = list?.get(posicao)?.level.toFloat()
+            txtNomeJogador.text = jogador.nome
+            txtNomeJogador.isChecked = jogador.isSelecionado
+            txtPosicaoJogador.text = jogador.posicao
+            rtNivel.rating = jogador.level.toFloat()
 
             txtNomeJogador.setOnClickListener {
-                list?.get(posicao)!!.isSelecionado = txtNomeJogador.isChecked
+                list.get(posicao).isSelecionado = txtNomeJogador.isChecked
             }
 
             return convertView
@@ -281,12 +276,8 @@ class SelecionarJogadoresActivity : AppCompatActivity() {
         }
 
         internal var sp: Spinner? = null
-        private var arrayAdapter: ArrayAdapter<String>? = null
-        internal var posicoes = JogadorDAO.listaPosicoes
 
-        constructor(parcel: Parcel) : this() {
-            posicoes = parcel.createStringArray()
-        }
+        internal var posicoes = JogadorDAO.listaPosicoes
 
     }
 }
