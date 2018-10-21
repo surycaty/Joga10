@@ -36,7 +36,7 @@ class GerenciarAtletaActivity : AppCompatActivity() {
         atualizarAdapter()
 
         fab.setOnClickListener {
-            var intent : Intent = Intent(this@GerenciarAtletaActivity, CadastroJogadorActivity::class.java)
+            var intent = Intent(this@GerenciarAtletaActivity, CadastroJogadorActivity::class.java)
 
             startActivityForResult(intent,CHAMADA)
 
@@ -45,11 +45,7 @@ class GerenciarAtletaActivity : AppCompatActivity() {
     }
 
     private fun atualizarAdapter() {
-        var adapter : CadastroJogadorAdapter? = null
-
-        adapter = CadastroJogadorAdapter(this@GerenciarAtletaActivity)
-
-        lvJogadores.adapter = adapter
+        lvJogadores.adapter = CadastroJogadorAdapter(this@GerenciarAtletaActivity)
     }
 
     override fun onResume() {
@@ -62,12 +58,7 @@ class GerenciarAtletaActivity : AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         if (requestCode == CHAMADA) {
             if (resultCode == Activity.RESULT_OK) {
-
-                var adapter : CadastroJogadorAdapter? = null
-
-                adapter = CadastroJogadorAdapter(this@GerenciarAtletaActivity)
-
-                lvJogadores.adapter = adapter
+                lvJogadores.adapter = CadastroJogadorAdapter(this@GerenciarAtletaActivity)
             }
         }
     }
@@ -93,11 +84,11 @@ class GerenciarAtletaActivity : AppCompatActivity() {
                 convertView = View.inflate(context, R.layout.itens_jogadores, null)
             }
 
-            var txtNomeJogador = convertView?.findViewById<TextView>(R.id.txtNome)
-            var txtPosicaoJogador = convertView?.findViewById<TextView>(R.id.txtPosicao)
-            var imgEdit = convertView?.findViewById<ImageView>(R.id.imgEdit)
-            var imgDelete = convertView?.findViewById<ImageView>(R.id.imgDelete)
-            var rtNivel = convertView!!.findViewById<RatingBar>(R.id.ratingBarGerenciamento)
+            val txtNomeJogador = convertView?.findViewById<TextView>(R.id.txtNome)
+            val txtPosicaoJogador = convertView?.findViewById<TextView>(R.id.txtPosicao)
+            val imgEdit = convertView?.findViewById<ImageView>(R.id.imgEdit)
+            val imgDelete = convertView?.findViewById<ImageView>(R.id.imgDelete)
+            val rtNivel = convertView!!.findViewById<RatingBar>(R.id.ratingBarGerenciamento)
 
             txtNomeJogador!!.text = list?.get(posicao)?.nome
             txtPosicaoJogador!!.text = list?.get(posicao)?.posicao
@@ -106,22 +97,19 @@ class GerenciarAtletaActivity : AppCompatActivity() {
 
             imgEdit!!.setOnClickListener {
 
-                var mensagem: Toast? = null
-                var hasErro = false
-                var textoErro = "ALTERAR"
+                val intent = Intent(context, CadastroJogadorActivity::class.java)
 
-                var intent : Intent = Intent(context, CadastroJogadorActivity::class.java)
+                val jogador = list?.get(posicao)
 
                 intent.putExtra("EDITAR", true)
-                intent.putExtra("ID", list?.get(posicao)?.id)
-                intent.putExtra("NOME", list?.get(posicao)?.nome)
-                intent.putExtra("POSICAO", list?.get(posicao)?.posicao)
-                intent.putExtra("NIVEL", list?.get(posicao)!!.level)
+                intent.putExtra("ID", jogador?.id)
+                intent.putExtra("NOME", jogador?.nome)
+                intent.putExtra("POSICAO", jogador?.posicao)
+                intent.putExtra("NIVEL", jogador!!.level)
 
                 startActivity(context, intent, null)
 
-                mensagem = Utils.mensagem(context, textoErro)
-                mensagem!!.show()
+                Utils.mensagem(context, "ALTERAR").show()
 
             }
 
@@ -131,37 +119,22 @@ class GerenciarAtletaActivity : AppCompatActivity() {
                 simpleAlert.setTitle("Atenção")
                 simpleAlert.setMessage("Deseja Realmente excluir?")
 
-                simpleAlert.setButton(AlertDialog.BUTTON_POSITIVE, "OK", {
-                    dialogInterface, i ->
+                simpleAlert.setButton(AlertDialog.BUTTON_POSITIVE, "OK") { dialogInterface, i ->
 
-                    var jogador : Jogador
-                    var jogadorDao : JogadorDAO = JogadorDAO(context)
+                    var jogadorDao = JogadorDAO(context)
                     jogadorDao.excluir(list?.get(posicao)!!)
 
-                    var mensagem: Toast? = null
-                    var hasErro = false
-                    var textoErro = "Jogador Excluído com sucesso!"
-                    mensagem = Utils.mensagem(context, textoErro)
-                    mensagem!!.show()
-
                     //this.list = jogadorDao.listaJogadores
+                    this.list!!.removeAt(posicao)
 
                     //this.arrayAdapter!!.remove(this.arrayAdapter!!.getItem(posicao))
 
-                    mensagem = Utils.mensagem(context, textoErro)
-                    mensagem!!.show()
-                })
+                    Utils.mensagem(context, "Jogador Excluído com sucesso!").show()
+                }
 
-                simpleAlert.setButton(AlertDialog.BUTTON_NEGATIVE, "Cancelar", {
-                    dialogInterface, i ->
-
-                    var mensagem: Toast? = null
-                    var hasErro = false
-                    var textoErro = "Cancelou DELETAR"
-
-                    mensagem = Utils.mensagem(context, textoErro)
-                    mensagem!!.show()
-                })
+                simpleAlert.setButton(AlertDialog.BUTTON_NEGATIVE, "Cancelar") { dialogInterface, i ->
+                    Utils.mensagem(context, "Cancelou DELETAR").show()
+                }
 
                 simpleAlert.show()
 

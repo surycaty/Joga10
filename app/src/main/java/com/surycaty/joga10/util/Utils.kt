@@ -4,9 +4,8 @@ import android.content.Context
 import android.widget.Toast
 
 /**
- * Created by negus on 30/09/17.
+ * Created by Adriano Surycaty on 30/09/17.
  */
-
 object Utils {
 
     fun mensagem(context: Context?, texto: String): Toast {

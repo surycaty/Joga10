@@ -46,29 +46,24 @@ class CadastroJogadorActivity : AppCompatActivity() {
         val btnSalvar = findViewById<Button>(R.id.btnSalvar)
 
         btnSalvar.setOnClickListener(View.OnClickListener {
-            var mensagem: Toast? = null
-            //var hasErro = false
-            var textoErro = "Jogador Salvo com Sucesso"
+
             val nomeJogador = findViewById<TextView>(R.id.txtNome)
             val posicao = findViewById<Spinner>(R.id.spinner)
             val estrelas = findViewById<RatingBar>(R.id.ratingBar)
 
-            if(nomeJogador.text == null || "".equals(nomeJogador.text)) {
-                mensagem = Utils.mensagem(applicationContext, "Campo Nome é obrigatório")
-                mensagem.show()
+            if(nomeJogador.text == null || "".equals(nomeJogador.text.toString().trim())) {
+                Utils.mensagem(applicationContext, "Campo Nome é obrigatório").show()
                 return@OnClickListener
             }
 
             if(posicao.selectedItem == null || "".equals(posicao.selectedItem)) {
-                mensagem = Utils.mensagem(applicationContext, "Campo Posição é obrigatório")
-                mensagem.show()
-
+                Utils.mensagem(applicationContext, "Campo Posição é obrigatório").show()
                 return@OnClickListener
             }
 
             val dao = JogadorDAO(applicationContext)
 
-            val jogador : Jogador = Jogador(0, nomeJogador.text.toString(), posicao.selectedItem.toString(), estrelas.rating.toInt())
+            val jogador = Jogador(0, nomeJogador.text.toString(), posicao.selectedItem.toString(), estrelas.rating.toInt())
 
             if (isEditar) {
                 jogador.id = idJogador
@@ -76,8 +71,7 @@ class CadastroJogadorActivity : AppCompatActivity() {
 
             dao.salvar(jogador)
 
-            mensagem = Utils.mensagem(applicationContext, textoErro)
-            mensagem.show()
+            Utils.mensagem(applicationContext, "Jogador Salvo com Sucesso").show()
 
             val returnIntent = Intent()
             returnIntent.putExtra("RESULTADO", "SUCESSO")

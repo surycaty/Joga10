@@ -13,6 +13,7 @@ import com.surycaty.joga10.dao.JogadorDAO
 import com.surycaty.joga10.entidade.Jogador
 import com.surycaty.joga10.entidade.JogadorTest
 import com.surycaty.joga10.entidade.Time
+import com.surycaty.joga10.util.Constantes
 import com.surycaty.joga10.util.Utils
 import kotlinx.android.synthetic.main.activity_selecionar_jogadores.*
 import java.io.Serializable
@@ -85,7 +86,7 @@ class SelecionarJogadoresActivity : AppCompatActivity() {
             }
 
             if (lista.isEmpty() || lista.size < qtdJogadores * 2) {
-                mensagem = Utils.mensagem(applicationContext, "Número de jogadores insulficiente para formar times.\nFavor Verificar o Nº de jogadores por times")
+                mensagem = Utils.mensagem(applicationContext, Constantes.MSG_ERRO_NUMERO_JOGADORES_INSULFICIENTE)
                 mensagem.show()
                 return@OnClickListener
             }
