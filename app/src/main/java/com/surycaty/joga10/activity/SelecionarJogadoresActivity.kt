@@ -3,7 +3,6 @@ package com.surycaty.joga10.activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.os.Parcel
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.view.ViewGroup
@@ -54,7 +53,7 @@ class SelecionarJogadoresActivity : AppCompatActivity() {
         }
 
         btnTirarTime.setOnClickListener(View.OnClickListener {
-            val mensagem: Toast?
+
             var hasErro = false
             var textoErro = ""
 
@@ -65,14 +64,13 @@ class SelecionarJogadoresActivity : AppCompatActivity() {
                 if (hasErro)
                     textoErro += "\n"
 
-                textoErro += "O Nº de jogadores tem que estar entre 1 e 11, favor corrigir!"
+                textoErro += Constantes.MSG_ERRO_NUMERO_JOGADORES_ENTRE_1_E_11
 
                 hasErro = true
             }
 
             if (hasErro) {
-                mensagem = Utils.mensagem(applicationContext, textoErro)
-                mensagem.show()
+                Utils.mensagem(applicationContext, textoErro).show()
 
                 return@OnClickListener
             }
@@ -86,8 +84,7 @@ class SelecionarJogadoresActivity : AppCompatActivity() {
             }
 
             if (lista.isEmpty() || lista.size < qtdJogadores * 2) {
-                mensagem = Utils.mensagem(applicationContext, Constantes.MSG_ERRO_NUMERO_JOGADORES_INSULFICIENTE)
-                mensagem.show()
+                Utils.mensagem(applicationContext, Constantes.MSG_ERRO_NUMERO_JOGADORES_INSULFICIENTE).show()
                 return@OnClickListener
             }
 
@@ -104,7 +101,7 @@ class SelecionarJogadoresActivity : AppCompatActivity() {
     private fun sortearTimes(lista: MutableList<Jogador>): List<Time> {
 
         val times = mutableListOf<Time>()
-        var nomeTimes = JogadorTest.listaNomeTimes()
+        val nomeTimes = JogadorTest.listaNomeTimes()
 
         val jogadoresPorTime = qtdJogadores
 
@@ -146,7 +143,7 @@ class SelecionarJogadoresActivity : AppCompatActivity() {
                 }
 
                 if (lista.size % jogadoresPorTime > 0) {
-                    Collections.shuffle(nomeTimes)
+                    nomeTimes.shuffle()
                     val nome = nomeTimes[0]
                     times.add(Time(times.size, nome, ArrayList()))
                 }
@@ -197,15 +194,6 @@ class SelecionarJogadoresActivity : AppCompatActivity() {
             }
         }
 
-//        println("Escalacao:");
-//        times.forEach { t ->
-//            println("Jogadores do Time: "+ t.nome)
-//            t.jogadores!!.forEach { j ->
-//                System.out.println("Nome: " + j.nome + " - Lvl: " + j.level)
-//            }
-//            println("")
-//        }
-
         return times
     }
 
@@ -220,7 +208,7 @@ class SelecionarJogadoresActivity : AppCompatActivity() {
         }
 
         if (aux.size > 1) {
-            Collections.shuffle(aux)
+            aux.shuffle()
         }
 
         return if (aux.isEmpty()) null else aux[0]
@@ -246,7 +234,7 @@ class SelecionarJogadoresActivity : AppCompatActivity() {
                 convertView = View.inflate(context, R.layout.formar_times, null)
             }
 
-            var jogador = this.getItem(posicao)
+            val jogador = this.getItem(posicao)
 
             val txtNomeJogador = convertView!!.findViewById(R.id.ckAtleta) as CheckBox
             val txtPosicaoJogador = convertView.findViewById(R.id.txtPosicaoSelecionar) as TextView

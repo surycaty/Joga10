@@ -10,7 +10,7 @@ import com.surycaty.joga10.entidade.Jogador
 import com.surycaty.joga10.util.Utils
 import kotlinx.android.synthetic.main.activity_cadastro_jogador.*
 import android.content.Intent
-
+import com.surycaty.joga10.util.Constantes
 
 
 class CadastroJogadorActivity : AppCompatActivity() {
@@ -51,13 +51,13 @@ class CadastroJogadorActivity : AppCompatActivity() {
             val posicao = findViewById<Spinner>(R.id.spinner)
             val estrelas = findViewById<RatingBar>(R.id.ratingBar)
 
-            if(nomeJogador.text == null || "".equals(nomeJogador.text.toString().trim())) {
-                Utils.mensagem(applicationContext, "Campo Nome é obrigatório").show()
+            if(nomeJogador.text == null || "" == nomeJogador.text.toString().trim()) {
+                Utils.mensagem(applicationContext, Constantes.MSG_ERRO_CAMPO_NOME_OBRIGATORIO).show()
                 return@OnClickListener
             }
 
             if(posicao.selectedItem == null || "".equals(posicao.selectedItem)) {
-                Utils.mensagem(applicationContext, "Campo Posição é obrigatório").show()
+                Utils.mensagem(applicationContext, Constantes.MSG_ERRO_CAMPO_POSICAO_OBRIGATORIO).show()
                 return@OnClickListener
             }
 
@@ -71,7 +71,7 @@ class CadastroJogadorActivity : AppCompatActivity() {
 
             dao.salvar(jogador)
 
-            Utils.mensagem(applicationContext, "Jogador Salvo com Sucesso").show()
+            Utils.mensagem(applicationContext, Constantes.MSG_JOGADOR_ATUALIZADO_SUCESSO).show()
 
             val returnIntent = Intent()
             returnIntent.putExtra("RESULTADO", "SUCESSO")

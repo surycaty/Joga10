@@ -5,7 +5,6 @@ import android.database.SQLException
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.view.View
 import android.widget.Button
 
 import com.surycaty.joga10.R
@@ -27,20 +26,20 @@ class MainActivity : AppCompatActivity() {
             Log.d("CONEXAO", "NOK")
         }
 
-        val btnTirarTime = findViewById(R.id.btnTirarTime) as Button
+        val btnTirarTime = findViewById<Button>(R.id.btnTirarTime)
 
         btnTirarTime.setOnClickListener {
-            val it = Intent(this@MainActivity, SelecionarJogadoresActivity::class.java)
+            val intent = Intent(this@MainActivity, SelecionarJogadoresActivity::class.java)
 
-            startActivity(it)
+            startActivity(intent)
         }
 
-        val btnGerenciarJogadores = findViewById(R.id.btnJogador) as Button
+        val btnGerenciarJogadores = findViewById<Button>(R.id.btnJogador)
 
         btnGerenciarJogadores.setOnClickListener{
-            val it = Intent(this@MainActivity, GerenciarAtletaActivity::class.java)
+            val intent = Intent(this@MainActivity, GerenciarAtletaActivity::class.java)
 
-            startActivity(it)
+            startActivity(intent)
         }
 
     }

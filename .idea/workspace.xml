@@ -18,14 +18,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9b5b6535-a276-47c7-9b79-99abfdb25edb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/surycaty/joga10/util/Constantes.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/surycaty/joga10/activity/CadastroJogadorActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/surycaty/joga10/activity/CadastroJogadorActivity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/surycaty/joga10/activity/GerenciarAtletaActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/surycaty/joga10/activity/GerenciarAtletaActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/surycaty/joga10/activity/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/surycaty/joga10/activity/MainActivity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/surycaty/joga10/activity/SelecionarJogadoresActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/surycaty/joga10/activity/SelecionarJogadoresActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/surycaty/joga10/util/Utils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/surycaty/joga10/util/Utils.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/surycaty/joga10/activity/TimesFormadosActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/surycaty/joga10/activity/TimesFormadosActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/surycaty/joga10/util/Constantes.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/surycaty/joga10/util/Constantes.kt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -136,14 +135,14 @@
         <counts>
           <entry key="gitignore" value="1" />
           <entry key="java" value="2" />
-          <entry key="kt" value="27" />
+          <entry key="kt" value="31" />
           <entry key="xml" value="30" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="JAVA" value="2" />
-          <entry key="Kotlin" value="27" />
+          <entry key="Kotlin" value="31" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="XML" value="30" />
         </counts>
@@ -169,16 +168,16 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="java" value="4" />
-          <entry key="kt" value="955" />
-          <entry key="txt" value="156" />
+          <entry key="kt" value="1453" />
+          <entry key="txt" value="242" />
           <entry key="xml" value="1014" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JAVA" value="4" />
-          <entry key="Kotlin" value="955" />
-          <entry key="PLAIN_TEXT" value="156" />
+          <entry key="Kotlin" value="1453" />
+          <entry key="PLAIN_TEXT" value="242" />
           <entry key="XML" value="1014" />
         </counts>
       </usages-collector>
@@ -189,29 +188,68 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/surycaty/joga10/activity/SelecionarJogadoresActivity.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="42" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
+            <state relative-caret-position="297">
+              <caret line="250" lean-forward="true" selection-start-line="250" selection-end-line="250" />
               <folding>
-                <element signature="n#!!block;n#selecionaJogador#0;n#!!block;n#SelecionarJogadoresActivity#0" />
+                <element signature="e#38#670#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/surycaty/joga10/util/Utils.kt">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/surycaty/joga10/activity/TimesFormadosActivity.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="7" selection-end-column="3" />
+            <state relative-caret-position="30">
+              <caret line="24" column="55" lean-forward="true" selection-start-line="24" selection-start-column="55" selection-end-line="24" selection-end-column="55" />
+              <folding>
+                <element signature="e#38#382#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/surycaty/joga10/activity/CadastroJogadorActivity.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="297">
+              <caret line="24" column="42" lean-forward="true" selection-start-line="24" selection-start-column="42" selection-end-line="24" selection-end-column="42" />
+              <folding>
+                <element signature="e#38#451#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/surycaty/joga10/activity/GerenciarAtletaActivity.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="94">
+              <caret line="123" column="37" selection-start-line="123" selection-start-column="37" selection-end-line="123" selection-end-column="37" />
+              <folding>
+                <element signature="e#38#670#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/surycaty/joga10/activity/MainActivity.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="297">
+              <caret line="47" lean-forward="true" selection-start-line="47" selection-end-line="47" />
+              <folding>
+                <element signature="e#38#324#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/surycaty/joga10/util/Constantes.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="43" selection-start-line="3" selection-start-column="43" selection-end-line="3" selection-end-column="43" />
+            <state relative-caret-position="297">
+              <caret line="20" column="73" selection-start-line="20" selection-start-column="73" selection-end-line="20" selection-end-column="73" />
             </state>
           </provider>
         </entry>
@@ -2379,7 +2417,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/build.gradle" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/surycaty/joga10/activity/TimesFormadosActivity.kt" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_gerenciar_atleta.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_selecionar_jogador.xml" />
@@ -2389,7 +2426,6 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/surycaty/joga10/entidade/Jogador.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/surycaty/joga10/activity/ScrollingActivity.kt" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_scrolling.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/surycaty/joga10/activity/MainActivity.kt" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main2.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" />
@@ -2401,13 +2437,15 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/surycaty/joga10/dao/JogadorDAO.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/surycaty/joga10/db/SQL.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/surycaty/joga10/db/Database.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/surycaty/joga10/activity/GerenciarAtletaActivity.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/surycaty/joga10/activity/CadastroJogadorActivity.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/surycaty/joga10/util/Utils.kt" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/surycaty/joga10/util/MensagemEnum.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/surycaty/joga10/activity/SelecionarJogadoresActivity.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/surycaty/joga10/activity/TimesFormadosActivity.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/surycaty/joga10/activity/CadastroJogadorActivity.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/surycaty/joga10/util/Constantes.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/surycaty/joga10/activity/GerenciarAtletaActivity.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/surycaty/joga10/activity/MainActivity.kt" />
       </list>
     </option>
   </component>
@@ -2476,6 +2514,16 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="joga10" type="462c0819:PsiDirectoryNode" />
+              <item name="activity" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Joga10" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Joga10" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="joga10" type="462c0819:PsiDirectoryNode" />
               <item name="util" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -2517,7 +2565,7 @@
     <property name="ExportApk.SignV1" value="true" />
     <property name="ExportApk.SignV2" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/Android/Sdk" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540128701753" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540131903186" />
     <property name="device.picker.selection" value="Pixel_API_21" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../git/Joga10" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -2630,7 +2678,14 @@
       <option name="project" value="LOCAL" />
       <updated>1540064886688</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Corrigido Cadastro de Jogador com nome vazio.&#10;Adicionado aquivo de Constantes.">
+      <created>1540128805439</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1540128805439</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -2679,7 +2734,8 @@
     <MESSAGE value="Comitando direto do IntelliJ" />
     <MESSAGE value="Corrigindo Tela &quot;Selecionar Jogadores&quot;" />
     <MESSAGE value="Refatorando e Gerando Open Beta" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refatorando e Gerando Open Beta" />
+    <MESSAGE value="Corrigido Cadastro de Jogador com nome vazio.&#10;Adicionado aquivo de Constantes." />
+    <option name="LAST_COMMIT_MESSAGE" value="Corrigido Cadastro de Jogador com nome vazio.&#10;Adicionado aquivo de Constantes." />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -2795,13 +2851,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/surycaty/joga10/activity/TimesFormadosActivity.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="31" column="12" selection-start-line="31" selection-start-column="12" selection-end-line="31" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_scrolling.xml" />
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_scrolling.xml" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/surycaty/joga10/activity/ScrollingActivity.kt" />
@@ -2813,13 +2862,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="11" column="23" lean-forward="true" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/surycaty/joga10/activity/MainActivity.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="19" column="45" selection-start-line="19" selection-start-column="45" selection-end-line="19" selection-end-column="45" />
         </state>
       </provider>
     </entry>
@@ -2941,34 +2983,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/surycaty/joga10/activity/GerenciarAtletaActivity.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="38" column="67" selection-start-line="38" selection-start-column="67" selection-end-line="38" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/surycaty/joga10/activity/CadastroJogadorActivity.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-30">
-          <caret line="48" lean-forward="true" selection-start-line="48" selection-end-line="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="13" column="63" lean-forward="true" selection-start-line="13" selection-start-column="63" selection-end-line="13" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/surycaty/joga10/activity/SelecionarJogadoresActivity.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="42" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
-          <folding>
-            <element signature="n#!!block;n#selecionaJogador#0;n#!!block;n#SelecionarJogadoresActivity#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2986,10 +3004,60 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/surycaty/joga10/activity/SelecionarJogadoresActivity.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="250" lean-forward="true" selection-start-line="250" selection-end-line="250" />
+          <folding>
+            <element signature="e#38#670#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/surycaty/joga10/activity/TimesFormadosActivity.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="24" column="55" lean-forward="true" selection-start-line="24" selection-start-column="55" selection-end-line="24" selection-end-column="55" />
+          <folding>
+            <element signature="e#38#382#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/surycaty/joga10/activity/CadastroJogadorActivity.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="24" column="42" lean-forward="true" selection-start-line="24" selection-start-column="42" selection-end-line="24" selection-end-column="42" />
+          <folding>
+            <element signature="e#38#451#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/surycaty/joga10/util/Constantes.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="43" selection-start-line="3" selection-start-column="43" selection-end-line="3" selection-end-column="43" />
+        <state relative-caret-position="297">
+          <caret line="20" column="73" selection-start-line="20" selection-start-column="73" selection-end-line="20" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/surycaty/joga10/activity/GerenciarAtletaActivity.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="94">
+          <caret line="123" column="37" selection-start-line="123" selection-start-column="37" selection-end-line="123" selection-end-column="37" />
+          <folding>
+            <element signature="e#38#670#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/surycaty/joga10/activity/MainActivity.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="47" lean-forward="true" selection-start-line="47" selection-end-line="47" />
+          <folding>
+            <element signature="e#38#324#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

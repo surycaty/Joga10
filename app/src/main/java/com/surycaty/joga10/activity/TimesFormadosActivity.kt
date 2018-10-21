@@ -1,22 +1,17 @@
 package com.surycaty.joga10.activity
 
-import android.content.Intent
 import android.graphics.Color
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.view.Gravity
-import android.view.View
-import android.widget.LinearLayout
 import android.widget.RatingBar
 import android.widget.TableLayout
 import android.widget.TableRow
 import android.widget.TextView
 
 import com.surycaty.joga10.R
-import com.surycaty.joga10.entidade.Jogador
 import com.surycaty.joga10.entidade.Time
+import com.surycaty.joga10.util.Constantes
 
-import java.util.ArrayList
 
 class TimesFormadosActivity : AppCompatActivity() {
 
@@ -29,7 +24,7 @@ class TimesFormadosActivity : AppCompatActivity() {
         val i = intent
         times = i.getSerializableExtra("timesFormados") as List<Time>
 
-        val table = findViewById(R.id.idTableTimesFormados) as TableLayout
+        val table = findViewById<TableLayout>(R.id.idTableTimesFormados)
 
         for (time in times!!) {
 
@@ -43,13 +38,12 @@ class TimesFormadosActivity : AppCompatActivity() {
             tvNomeJogadorHeader.setTextColor(Color.BLACK)
             tvNomeJogadorHeader.setPadding(30, 10, 30, 10)
 
-
             rowHeader.addView(tvNomeJogadorHeader)
 
 
             val tvLevelHeader = TextView(this)
             tvLevelHeader.setTextColor(Color.BLACK)
-            tvLevelHeader.text = "Level"
+            tvLevelHeader.text = Constantes.LEVEL
             tvLevelHeader.textSize = 18f
             tvLevelHeader.setTextColor(Color.BLACK)
             tvLevelHeader.setPadding(30, 10, 30, 10)

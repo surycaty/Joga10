@@ -14,9 +14,9 @@ import android.widget.*
 import com.surycaty.joga10.R
 import com.surycaty.joga10.dao.JogadorDAO
 import com.surycaty.joga10.entidade.Jogador
+import com.surycaty.joga10.util.Constantes
 import com.surycaty.joga10.util.Utils
 import kotlinx.android.synthetic.main.activity_gerenciar_atleta.*
-import java.util.*
 import kotlin.collections.ArrayList
 
 
@@ -36,7 +36,7 @@ class GerenciarAtletaActivity : AppCompatActivity() {
         atualizarAdapter()
 
         fab.setOnClickListener {
-            var intent = Intent(this@GerenciarAtletaActivity, CadastroJogadorActivity::class.java)
+            val intent = Intent(this@GerenciarAtletaActivity, CadastroJogadorActivity::class.java)
 
             startActivityForResult(intent,CHAMADA)
 
@@ -70,7 +70,7 @@ class GerenciarAtletaActivity : AppCompatActivity() {
 
         constructor(context: Context): this() {
 
-            var jogadorDao = JogadorDAO(context)
+            val jogadorDao = JogadorDAO(context)
             this.list = jogadorDao.listaJogadores
 
             this.context = context
@@ -90,22 +90,22 @@ class GerenciarAtletaActivity : AppCompatActivity() {
             val imgDelete = convertView?.findViewById<ImageView>(R.id.imgDelete)
             val rtNivel = convertView!!.findViewById<RatingBar>(R.id.ratingBarGerenciamento)
 
-            txtNomeJogador!!.text = list?.get(posicao)?.nome
-            txtPosicaoJogador!!.text = list?.get(posicao)?.posicao
-            rtNivel.rating = list?.get(posicao)?.level!!.toFloat()
+            val jogador = list?.get(posicao)
+
+            txtNomeJogador!!.text = jogador?.nome
+            txtPosicaoJogador!!.text = jogador?.posicao
+            rtNivel.rating = jogador?.level!!.toFloat()
 
 
             imgEdit!!.setOnClickListener {
 
                 val intent = Intent(context, CadastroJogadorActivity::class.java)
 
-                val jogador = list?.get(posicao)
-
                 intent.putExtra("EDITAR", true)
-                intent.putExtra("ID", jogador?.id)
-                intent.putExtra("NOME", jogador?.nome)
-                intent.putExtra("POSICAO", jogador?.posicao)
-                intent.putExtra("NIVEL", jogador!!.level)
+                intent.putExtra("ID", jogador.id)
+                intent.putExtra("NOME", jogador.nome)
+                intent.putExtra("POSICAO", jogador.posicao)
+                intent.putExtra("NIVEL", jogador.level)
 
                 startActivity(context, intent, null)
 
@@ -121,19 +121,19 @@ class GerenciarAtletaActivity : AppCompatActivity() {
 
                 simpleAlert.setButton(AlertDialog.BUTTON_POSITIVE, "OK") { dialogInterface, i ->
 
-                    var jogadorDao = JogadorDAO(context)
-                    jogadorDao.excluir(list?.get(posicao)!!)
+                    val jogadorDao = JogadorDAO(context)
+                    jogadorDao.excluir(jogador)
 
                     //this.list = jogadorDao.listaJogadores
                     this.list!!.removeAt(posicao)
 
                     //this.arrayAdapter!!.remove(this.arrayAdapter!!.getItem(posicao))
 
-                    Utils.mensagem(context, "Jogador Excluído com sucesso!").show()
+                    Utils.mensagem(context, Constantes.MSG_JOGADOR_EXCLUIDO_SUCESSO).show()
                 }
 
                 simpleAlert.setButton(AlertDialog.BUTTON_NEGATIVE, "Cancelar") { dialogInterface, i ->
-                    Utils.mensagem(context, "Cancelou DELETAR").show()
+                    Utils.mensagem(context, Constantes.MSG_EXCLUIR_JOGADOR_CANCELADO).show()
                 }
 
                 simpleAlert.show()
