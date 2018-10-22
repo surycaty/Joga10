@@ -13,4 +13,9 @@
     <string name="selecionar_jogadores">Selecionar Atletas</string>
     <string name="gerenciar_atletas">Gerenciar Atletas</string>
 
+    <!-- LABELs -->
+    <string name="nome_atleta">Nome do Atleta</string>
+    <string name="salvar">Salvar</string>
+    <string name="selecionar_para_time">Selecionar Atletas para tirar times</string>
+
 </resources>

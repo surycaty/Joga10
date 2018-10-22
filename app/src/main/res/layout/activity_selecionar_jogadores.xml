@@ -80,7 +80,7 @@
 
         <TextView
                 android:id="@+id/textView"
-                android:text="Selecionar Atletas para tirar times"
+                android:text="@string/selecionar_para_time"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -103,7 +103,5 @@
             android:layout_weight="1"
             android:layout_below="@id/divider2"
             android:layout_margin="2dp"/>
-
-    <!--/HorizontalScrollView-->
 
 </RelativeLayout>
